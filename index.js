@@ -37,8 +37,16 @@ function onSubmit(event){
         userDetail.appendChild(li);
 
         //Storing details in localStorage
-        localStorage.setItem('Name',nameInput.value);
-        localStorage.setItem('Email',emailInput.value);
+        // localStorage.setItem('Name',nameInput.value);
+        // localStorage.setItem('Email',emailInput.value);
+
+        //Storing object in localStorage
+        let userData = {
+            'Name':nameInput.value,
+            'Email':emailInput.value
+        };
+        localStorage.setItem('User',JSON.stringify(userData));
+        // console.log(JSON.parse(localStorage.getItem('User')));
         
         //clearing fields
         nameInput.value = '';
