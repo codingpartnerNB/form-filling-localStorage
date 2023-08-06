@@ -40,14 +40,21 @@ function onSubmit(event){
         // localStorage.setItem('Name',nameInput.value);
         // localStorage.setItem('Email',emailInput.value);
 
-        //Storing object in localStorage
+        // //Storing object in localStorage with single user
+        // let userData = {
+        //     'Name':nameInput.value,
+        //     'Email':emailInput.value
+        // };
+        // localStorage.setItem('User',JSON.stringify(userData));
+        // // console.log(JSON.parse(localStorage.getItem('User')));
+        
+        //Storing object in localStorage with multiple users
         let userData = {
             'Name':nameInput.value,
             'Email':emailInput.value
         };
-        localStorage.setItem('User',JSON.stringify(userData));
-        // console.log(JSON.parse(localStorage.getItem('User')));
-        
+        localStorage.setItem(emailInput.value,JSON.stringify(userData));
+
         //clearing fields
         nameInput.value = '';
         emailInput.value = '';
